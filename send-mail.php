@@ -1,27 +1,27 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $firstName = htmlspecialchars($_POST['first_name']);
-    $lastName  = htmlspecialchars($_POST['last_name']);
-    $email     = htmlspecialchars($_POST['email']);
-    $phone     = htmlspecialchars($_POST['phone']);
-    $message   = htmlspecialchars($_POST['message']);
+    function clean($data) {
+        return htmlspecialchars(trim($data));
+    }
 
-    $to = "yourmail@example.com"; // YOUR email
-    $subject = "New Quote Request";
-    
-    $body = "
-    New Quote Request:
+    $firstName = clean($_POST['first_name'] ?? '');
+    $lastName  = clean($_POST['last_name'] ?? '');
+    $email     = clean($_POST['email'] ?? '');
+    $phone     = clean($_POST['phone'] ?? '');
+    $message   = clean($_POST['message'] ?? '');
 
-    Name: $firstName $lastName
-    Email: $email
-    Phone: $phone
+    $to = "zubeir.work@gmail.com";
+    $subject = "New Quote Request - Website";
 
-    Project Details:
-    $message
-    ";
+    $body = "New Quote Request\n\n";
+    $body .= "Name: $firstName $lastName\n";
+    $body .= "Email: $email\n";
+    $body .= "Phone: $phone\n\n";
+    $body .= "Project Details:\n$message";
 
-    $headers = "From: Website <noreply@yourdomain.com>";
+    $headers  = "From: Website <noreply@yourdomain.com>\r\n";
+    $headers .= "Reply-To: $email";
 
     if (mail($to, $subject, $body, $headers)) {
         echo "success";

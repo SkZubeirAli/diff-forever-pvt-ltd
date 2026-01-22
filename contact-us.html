@@ -113,7 +113,7 @@
             </div>
             <!-- RIGHT FORM -->
             <div class="col-lg-6" data-aos="fade-left">
-              <form method="POST" action="send-mail.php">
+              <!-- <form method="POST" action="send-mail.php">
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label>First Name</label>
@@ -139,7 +139,46 @@
                     <button type="submit" class="btn submit-btn orng_arw_btn w-100"> Send Request </button>
                   </div>
                 </div>
-              </form>
+              </form> -->
+              <form method="POST" action="https://api.web3forms.com/submit">
+    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+    <input type="hidden" name="subject" value="New Quote Request - Website">
+    <input type="hidden" name="from_name" value="Diff Forever Pvt Ltd">
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label>First Name</label>
+            <input type="text" name="first_name" class="form-control" placeholder="John" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label>Last Name</label>
+            <input type="text" name="last_name" class="form-control" placeholder="Doe" required>
+        </div>
+
+        <div class="col-12 mb-3">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
+        </div>
+
+        <div class="col-12 mb-3">
+            <label>Phone</label>
+            <input type="text" name="phone" class="form-control" placeholder="(555) 123-4567" required>
+        </div>
+
+        <div class="col-12 mb-4">
+            <label>Project Details</label>
+            <textarea name="message" class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn submit-btn orng_arw_btn w-100">
+                Send Request
+            </button>
+        </div>
+    </div>
+</form>
+
             </div>
           </div>
         </div>
