@@ -1,0 +1,242 @@
+/* responsive */
+
+/* =====================================================
+   RESPONSIVE STYLES
+   Applies to ALL PAGES (Home, Services, About, Contact)
+===================================================== */
+
+/* ---------- Tablets ---------- */
+@media (max-width: 991px) {
+    p,
+    li,
+    a {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 60px 0px;
+    }
+
+    .floating-actions {
+        right: 15px;
+        bottom: 20px;
+    }
+
+    .mobile_menu_img {
+        width: 70px;
+    }
+
+    .mobile_menu_imgtop {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        align-items: center;
+    }
+
+    .mobile_menu_close {
+        border: 1px solid #000;
+        background: transparent;
+        font-size: 30px;
+        height: 50px;
+        width: 40px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 25px 25px;
+        transition: left 0.3s ease;
+        box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .header-nav.active {
+        left: 0;
+    }
+
+    .header-nav .navbar-nav {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .mobile-header-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .mobile-header-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 66px;
+    }
+
+    .stats h2 {
+        font-size: 38px;
+    }
+
+    .section_black_heading {
+        font-size: 34px;
+    }
+
+    .stats p {
+        font-size: 14px;
+    }
+
+    /* WHY CHOOSE SECTION */
+    .why-title {
+        font-size: 32px;
+    }
+
+    .stats-grid {
+        margin-top: 40px;
+    }
+
+    .testimonial-card {
+        padding: 30px 25px;
+    }
+
+    /* CTA SECTION */
+    .cta-box {
+        padding: 30px 20px;
+    }
+
+    /* SERVICES */
+    .service-card img {
+        height: 200px;
+    }
+
+    .contact-left {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+    .footer_brand {
+        margin-bottom: 30px;
+    }
+    .footer_details p,
+    .footer_details span {
+        font-size: 14px;
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+    section {
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stats h2 {
+        font-size: 34px;
+    }
+
+    .stats p {
+        font-size: 16px;
+    }
+
+    .section_black_heading {
+        font-size: 30px;
+    }
+
+    .home_page .service-card {
+        text-align: center;
+    }
+
+    .service-card i {
+        margin-bottom: 0px;
+    }
+
+    .project-card h5 {
+        font-size: 18px;
+    }
+
+    .project-card span {
+        font-size: 14px;
+    }
+
+    .footer_links {
+        margin-bottom: 16px;
+    }
+
+    .footer_links h6 {
+        margin-bottom: 8px;
+    }
+
+    .footer_bottom a {
+        margin-left: 0px;
+    }
+
+    /* WHY CHOOSE SECTION */
+    .why-title {
+        font-size: 26px;
+    }
+
+    .why-desc {
+        font-size: 14px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CTA SECTION */
+    .cta-box {
+        text-align: center;
+    }
+
+    .cta-box h3 {
+        font-size: 22px;
+    }
+
+    .cta-btn {
+        margin-top: 15px;
+    }
+
+    /* SERVICES */
+    .service-card,
+    .project-card {
+        padding: 15px;
+    }
+    .service-card img {
+        height: 180px;
+    }
+
+    .service-content,
+    .project_ontent {
+        padding: 25px 0px 25px 0px;
+    }
+    .contact-section form {
+        padding: 20px 15px;
+    }
+}
