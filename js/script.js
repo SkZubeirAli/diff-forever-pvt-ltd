@@ -1,10 +1,9 @@
  
 
- AOS.init({
-    duration: 800,
-    easing: "ease-in-out",
+ AOS.init({ 
     once: true,
-    delay: 0
+duration: 500,
+easing: "ease-in-out",
 });
 
 
@@ -40,6 +39,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+document.addEventListener("scroll", function () {
+
+    const backToTop = document.getElementById("backToTop");
+
+    if (!backToTop) return;
+
+    const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop;
+
+    if (scrollTop > 200) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+});
+
+document.addEventListener("click", function (e) {
+
+    if (e.target.closest("#backToTop")) {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+});
+
 
 window.addEventListener("scroll", function () {
 
@@ -134,33 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const backToTop = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", function () {
-
-        const scrollTop =
-            document.documentElement.scrollTop || document.body.scrollTop;
-
-        if (scrollTop > 200) {
-            backToTop.classList.add("show");
-        } else {
-            backToTop.classList.remove("show");
-        }
-
-    });
-
-    backToTop.addEventListener("click", function () {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
-
-});
 
 
 
