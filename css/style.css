@@ -751,9 +751,12 @@ section.service_grid {
     transition: 0.3s ease;
 }
 
-.services_page .service-card,
-.project_page .project_content {
+.services_page .service-card {
     padding: 30px;
+}
+
+.project_page .project_content {
+    padding: 20px;
 }
 
 .service-card:hover {

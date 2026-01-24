@@ -228,6 +228,12 @@
     .project-card {
         padding: 15px;
     }
+    .project_page .project-card {
+        padding: 0px;
+    }
+    .project_page .project_content {
+        padding: 20px;
+    }
     .service-card img {
         height: 180px;
     }
