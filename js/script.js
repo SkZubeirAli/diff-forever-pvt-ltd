@@ -1,33 +1,30 @@
- 
 
- AOS.init({ 
+
+AOS.init({
     once: true,
-duration: 500,
-easing: "ease-in-out",
+    duration: 500,
+    easing: "ease-in-out",
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-
+function initMobileMenu() {
     const toggleBtn = document.getElementById("menuToggle");
     const navMenu = document.getElementById("headerNav");
     const closeBtn = document.getElementById("menu_close");
 
-    // OPEN / TOGGLE MENU
+    if (!toggleBtn || !navMenu || !closeBtn) return;
+
     toggleBtn.addEventListener("click", function (e) {
         e.stopPropagation();
         navMenu.classList.add("active");
     });
 
-    // CLOSE MENU BY CLOSE BUTTON
     closeBtn.addEventListener("click", function (e) {
         e.stopPropagation();
         navMenu.classList.remove("active");
     });
 
-    // CLICK OUTSIDE MENU TO CLOSE
     document.addEventListener("click", function (e) {
-
         if (
             navMenu.classList.contains("active") &&
             !navMenu.contains(e.target) &&
@@ -35,10 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
             navMenu.classList.remove("active");
         }
-
     });
+}
 
-});
+
 document.addEventListener("scroll", function () {
 
     const backToTop = document.getElementById("backToTop");
@@ -81,18 +78,19 @@ window.addEventListener("scroll", function () {
 
 
 fetch("/partials/header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header").innerHTML = data;
-        });
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("header").innerHTML = data;
+        initMobileMenu(); // ✅ NOW events attach after header exists
+    });
 
-    fetch("/partials/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
+fetch("/partials/footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });
 
-        
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -136,27 +134,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    var testimonialSwiper = new Swiper(".testimonialSwiper", {
-  slidesPerView: 2,
-  spaceBetween: 30,
-  loop: true,
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
+var testimonialSwiper = new Swiper(".testimonialSwiper", {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
     },
-    768: {
-      slidesPerView: 2,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
-  },
-  grabCursor: true,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+    },
+    grabCursor: true,
 });
 
 
@@ -165,9 +163,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-document.getElementById('quoteForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Your request has been submitted!');
-      this.reset();
-    });
+document.getElementById('quoteForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Your request has been submitted!');
+    this.reset();
+});
 
